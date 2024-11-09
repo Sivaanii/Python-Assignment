@@ -1,128 +1,33 @@
-Python 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
+def grades(avg_score):
+    if avg_score>=90:
+        return "A"
+    elif avg_score>=80:
+        return "B"
+    elif avg_score>=60:
+        return "C"
+    elif avg_score>=50:
+        return "D"
+    elif avg_score>=30:
+        return "E"
+    else:
+        return "F"
 
-=========== RESTART: C:/Users/kssiv/OneDrive/Documents/fibonacci sequence.py ===========
-enter the number of terms:6
-0,1,1,2,3,5
+def main():
+    name=input("enter the student's name:")
+    subjects={}
 
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py ===========
+    for i in range(int(input("enter the number of subjects:"))):
+      subject=input("enter the subject:")
+      score=float(input(f"enter the score of {subject}:"))
+      subjects[subject]=score
 
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py ===========
-enter the student's name:sivani
-enter the number of subject:3
-enter the subject:maths
-enter the score of maths:80
-enter the subject:cs
-enter the score of cs:90
-enter the subject:statistics
-enter the score of statistics:70
-Traceback (most recent call last):
-  File "C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py", line 31, in <module>
-    main()
-  File "C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py", line 23, in main
-    avg_score=sum(subject.values())/len(subject)
-AttributeError: 'str' object has no attribute 'values'
+    avg_score=sum(subjects.values())/len(subjects)
+    grade=grades(avg_score)
 
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py ===========
-enter the student's name:sivani
-enter the number of subject:3
-enter the subject:maths
-enter the score of maths:80
-Traceback (most recent call last):
-  File "C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py", line 32, in <module>
-    main()
-  File "C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py", line 22, in main
-    subject[subject]=score
-TypeError: 'str' object does not support item assignment
+    print(f"\nstudent:{name}")
+    print("scores:",subjects)
+    print(f"average score:{avg_score:.2f}")
+    print(f"grade:{grade}")
 
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/avg_score & grade.py ===========
-enter the student's name:sivani
-enter the number of subject:3
-enter the subject:maths
-enter the score of maths:70
-enter the subject:stati
-enter the score of stati:60
-enter the subject:cs
-enter the score of cs:90
-
-student:sivani
-scores: {'maths': 70.0, 'stati': 60.0, 'cs': 90.0}
-average score:110.00
-grade:A
-
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/unique character.py ============
-
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/unique character.py ============
-enter the string:hello
-True
-
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/unique character.py ============
-enter the string:hello
-Traceback (most recent call last):
-  File "C:/Users/kssiv/OneDrive/Documents/unique character.py", line 12, in <module>
-    print(unique_character(string))
-  File "C:/Users/kssiv/OneDrive/Documents/unique character.py", line 8, in unique_character
-    seen_char.add(char)
-NameError: name 'seen_char' is not defined. Did you mean: 'set_char'?
-
-============ RESTART: C:/Users/kssiv/OneDrive/Documents/unique character.py ============
-enter the string:hello
-False
-
-============== RESTART: C:/Users/kssiv/OneDrive/Documents/word_counter.py ==============
-enter the paragraph:hello besties, how are you doing, i say you yesterday and i said hello to you, but you didnt said hello to me back
-Traceback (most recent call last):
-  File "C:/Users/kssiv/OneDrive/Documents/word_counter.py", line 19, in <module>
-    word_counter(text)
-  File "C:/Users/kssiv/OneDrive/Documents/word_counter.py", line 5, in word_counter
-    paragraph=paragraph.translate(str.maketrans(",",string.punctuation))
-ValueError: the first two maketrans arguments must have equal length
-
-============== RESTART: C:/Users/kssiv/OneDrive/Documents/word_counter.py ==============
-enter the paragraph:hello besties, how are you doing, i say you yesterday and i said hello to you, but you didnt said hello to me back
-Traceback (most recent call last):
-  File "C:/Users/kssiv/OneDrive/Documents/word_counter.py", line 19, in <module>
-    word_counter(text)
-  File "C:/Users/kssiv/OneDrive/Documents/word_counter.py", line 5, in word_counter
-    paragraph=paragraph.translate(str.maketrans(",",string.punctuation))
-ValueError: the first two maketrans arguments must have equal length
->>> 
-============== RESTART: C:/Users/kssiv/OneDrive/Documents/word_counter.py ==============
-enter the paragraph:hello besties, how are you doing, i say you yesterday and i said hello to you, but you didnt said hello to me back
-hello:3
-besties:1
-how:1
-are:1
-you:4
-doing:1
-i:2
-say:1
-yesterday:1
-and:1
-said:2
-to:2
-but:1
-didnt:1
-me:1
-back:1
->>> hello besties, how are you doing, i saw you yesterday and i said hello to you, but you didnt said hello to me back
-SyntaxError: invalid syntax
->>> 
-============== RESTART: C:/Users/kssiv/OneDrive/Documents/word_counter.py ==============
-enter the paragraph:hello besties, how are you doing, i saw you yesterday and i said hello to you, but you didnt said hello to me back
-hello:3
-besties:1
-how:1
-are:1
-you:4
-doing:1
-i:2
-saw:1
-yesterday:1
-and:1
-said:2
-to:2
-but:1
-didnt:1
-me:1
-back:1
+main()
+    
